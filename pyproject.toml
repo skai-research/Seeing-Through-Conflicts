@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61,<81", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "verl"
+version = "0.4.1"
+description = "veRL training code for Seeing Through Conflicts"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch==2.8.0",
+    "torchvision==0.23.0",
+    "transformers==4.57.3",
+    "vllm==0.11.0",
+    "qwen-vl-utils==0.0.14",
+    "datasets==4.1.0",
+    "pyarrow==21.0.0",
+    "Pillow==12.0.0",
+    "ray[default]==2.52.1",
+    "tensordict==0.6.2",
+    "accelerate",
+    "codetiming",
+    "dill",
+    "hydra-core",
+    "numpy",
+    "pandas",
+    "peft",
+    "pybind11",
+    "pylatexenc",
+    "torchdata",
+    "wandb",
+    "packaging>=20.0",
+    "langdetect",
+    "regex",
+    "setuptools<81",
+]
+
+[tool.setuptools.packages.find]
+include = ["verl*"]
+
+[tool.setuptools.package-data]
+verl = ["version/version", "trainer/config/*.yaml", "trainer/runtime_env.yaml"]
